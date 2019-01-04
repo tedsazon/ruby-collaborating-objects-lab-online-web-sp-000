@@ -23,8 +23,7 @@ class Artist
   end
 
   def self.create_by_name(name)
-    self.new(name)
-    artist.save
+    self.new(name).tap {|artist| artist.save}
   end
 
   def self.find_by_name(name)
@@ -33,7 +32,7 @@ class Artist
 
   def self.find_or_create_by_name(name)
     self.find_by_name(name) ?
-    self.find_by_name(name) : self.create_by_name(name)
+    self.find_by_name(name) : self.create_by_name(name) 
   end
 
 end
