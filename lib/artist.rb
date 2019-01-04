@@ -34,5 +34,7 @@ class Artist
     @@all.each do |artist|
       result = artist if artist.name == name
     end
+    result
+  end
 
 end
