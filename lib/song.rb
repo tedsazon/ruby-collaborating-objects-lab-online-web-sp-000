@@ -11,9 +11,11 @@ class Song
     else
       @artist.name
     end
-  end 
+  end
 
-
+  def self.new_by_filename(name)
+    song = self.new
+    song.name = name.split(" - ")[1]
 
 
 
